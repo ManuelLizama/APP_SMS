@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<!--
+	Dimension by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>DEMO Phonegap/Cordova</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/funciones.js"></script>	
+		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	</head>
+	<body>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="logo">
+							<span class="icon fa-diamond"></span>
+						</div>
+						<div class="content">
+							<div class="inner">
+								<h1>Calculadora Basica en T2 desde app con css 3 Responsive:</h1>
+								Ingrese nro1:<input type="text" id="nro1" onkeypress="return soloNumeros(event)">
+								Ingrese nro2:<input type="text" id="nro2" onkeypress="return soloNumeros(event)">
+								<select id="operacion">
+									<option value="0">Elija Operación</option>
+									<option value="1">Suma</option>
+									<option value="2">Resta</option>
+									<option value="3">Multiplicación</option>
+									<option value="4">División</option>
+								</select>
+								<input type="button" value="Calcular" onclick="operacion();">
+								<div id="divCargando" style="display: none;">
+									<br>
+									<label id="labelCargando"></label><br><br>
+								</div>
+								<div id="divResultado" style="display: none;">
+									<br>
+									<label id="labelResultado"></label><br><br>
+									<input type="button" value="Reiniciar" onclick="reiniciar();">
+								</div>
+							</div>
+						</div>
+					</header>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<p class="copyright">&copy;Manuel Lizama. UNAB 2018 Diseño: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- BG -->
+			<div id="bg"></div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
