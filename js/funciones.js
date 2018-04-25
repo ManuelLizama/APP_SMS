@@ -64,6 +64,7 @@ function onDeviceReady()
 // Do cool things here...
   //getPosition();
   getPosition();
+  watchPosition();
   if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
   
   
