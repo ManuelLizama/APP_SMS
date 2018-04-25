@@ -2,7 +2,12 @@ var lat = '-33.4349083';
 var lon = '-70.6170132';
 document.addEventListener("deviceready", onDeviceReady, false);
  
+function getPosition() {
  
+    navigator.geolocation.getCurrentPosition
+    (onMapSuccess, onMapError, { enableHighAccuracy: true });
+}
+
 var onMapSuccess = function (position) {
  
     lat = position.coords.latitude;
@@ -31,9 +36,9 @@ function onDeviceReady()
 {
 // Do cool things here...
   //getPosition();
+  getPosition()
   if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
-  navigator.geolocation.getCurrentPosition
-    (onMapSuccess, onMapError, { enableHighAccuracy: true });
+  
   
 }
  
