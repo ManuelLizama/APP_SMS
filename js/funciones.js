@@ -3,24 +3,51 @@ var lon = '-70.6170132';
 document.addEventListener("deviceready", onDeviceReady, false);
  
 function getPosition() {
- 
-    navigator.geolocation.getCurrentPosition
-    (onMapSuccess, onMapError, { enableHighAccuracy: true });
+   var options = {
+      enableHighAccuracy: true,
+      maximumAge: 3600000
+   }
+   var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+
+   function onSuccess(position) {
+      alert('Latitude: '          + position.coords.latitude          + '\n' +
+         'Longitude: '         + position.coords.longitude         + '\n' +
+         'Altitude: '          + position.coords.altitude          + '\n' +
+         'Accuracy: '          + position.coords.accuracy          + '\n' +
+         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+         'Heading: '           + position.coords.heading           + '\n' +
+         'Speed: '             + position.coords.speed             + '\n' +
+         'Timestamp: '         + position.timestamp                + '\n');
+   };
+
+   function onError(error) {
+      alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+   }
 }
 
-var onMapSuccess = function (position) {
- 
-    lat = position.coords.latitude;
-    lon = position.coords.longitude;
- 
- 
-}
+function watchPosition() {
+   var options = {
+      maximumAge: 3600000,
+      timeout: 3000,
+      enableHighAccuracy: true,
+   }
+   var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
 
-function onMapError(error) {
-    console.log('code: ' + error.code + '\n' +
-        'message: ' + error.message + '\n');
-}
+   function onSuccess(position) {
+      alert('Latitude: '          + position.coords.latitude          + '\n' +
+         'Longitude: '         + position.coords.longitude         + '\n' +
+         'Altitude: '          + position.coords.altitude          + '\n' +
+         'Accuracy: '          + position.coords.accuracy          + '\n' +
+         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+         'Heading: '           + position.coords.heading           + '\n' +
+         'Speed: '             + position.coords.speed             + '\n' +
+         'Timestamp: '         + position.timestamp                + '\n');
+   };
 
+   function onError(error) {
+      alert('code: '    + error.code    + '\n' +'message: ' + error.message + '\n');
+   }
+}
 
 function showAlert(msj)
 {
@@ -36,7 +63,7 @@ function onDeviceReady()
 {
 // Do cool things here...
   //getPosition();
-  getPosition()
+  getPosition();
   if (! SMS ) { alert( 'SMS plugin not ready' ); return; }
   
   
