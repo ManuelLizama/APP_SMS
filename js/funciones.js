@@ -1,6 +1,24 @@
 var lat = '-33.4349083';
 var lon = '-70.6170132';
 document.addEventListener("deviceready", onDeviceReady, false);
+navigator.geolocation.getCurrentPosition
+    (onMapSuccess, onMapError, { enableHighAccuracy: true });
+
+ 
+// Success callback for get geo coordinates
+ 
+var onMapSuccess = function (position) {
+ 
+    lat = position.coords.latitude;
+    lon = position.coords.longitude;
+ 
+ 
+}
+
+function onMapError(error) {
+    console.log('code: ' + error.code + '\n' +
+        'message: ' + error.message + '\n');
+}
 
 
 function showAlert(msj)
@@ -84,6 +102,7 @@ function sendSMS()
   }
   else
   {
+
   	// lat=position.coords.latitude;
   	// lon=position.coords.longitude;
     var textoURl = "y no tengo GPS Activado,";
