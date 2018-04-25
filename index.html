@@ -24,24 +24,17 @@
 				<!-- Header -->
 					<header id="header">
 						<div class="logo">
-							<span class="icon fa-diamond"></span>
+							<span class="icon fa-chrome"></span>
 						</div>
 						<div class="content">
 							<div class="inner">
-								<h1>Calculadora Basica en T2 desde app con css 3 Responsive:</h1>
-								Ingrese nro1:<input type="text" id="nro1" onkeypress="return soloNumeros(event)">
-								Ingrese nro2:<input type="text" id="nro2" onkeypress="return soloNumeros(event)">
-								<select id="operacion">
-									<option value="0">Elija Operación</option>
-									<option value="1">Suma</option>
-									<option value="2">Resta</option>
-									<option value="3">Multiplicación</option>
-									<option value="4">División</option>
-								</select>
-								<input type="button" value="Calcular" onclick="operacion();">
-								<div id="divCargando" style="display: none;">
-									<br>
-									<label id="labelCargando"></label><br><br>
+								<h1>Enviar mensaje con coordenadas:</h1>
+								Ingrese Nro Fono:<input id="fono" placeholder="56998765432" name="fono" type="text" class="ui-input-text ui-body-c" onkeypress="return soloNumeros(event)"  />
+								Ingrese mensaje:<input id="msg" placeholder="mensaje" name="fono" type="text" class="ui-input-text ui-body-c" />
+								<br>
+								<input type="button" value="Enviar SMS" onclick="sendSMS();">
+								<div>
+								<input type="button" value="Ver Ubicacion" onclick="verUbicacion();">
 								</div>
 								<div id="divResultado" style="display: none;">
 									<br>
